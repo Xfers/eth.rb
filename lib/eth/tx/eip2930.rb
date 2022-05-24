@@ -138,7 +138,7 @@ module Eth
         type = hex[0, 2]
         raise TransactionTypeError, "Invalid transaction type #{type}!" if type.to_i(16) != TYPE_2930
 
-        bin = Util.hex_to_bin hex[2..]
+        bin = Util.hex_to_bin hex[2, hex.length - 2]
         tx = Rlp.decode bin
 
         # decoded transactions always have 8 + 3 fields, even if they are empty or zero

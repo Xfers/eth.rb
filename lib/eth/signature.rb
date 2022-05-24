@@ -55,7 +55,7 @@ module Eth
       end
       r = signature[0, 64]
       s = signature[64, 64]
-      v = signature[128..]
+      v = signature[128, signature.length - 128]
       return r, s, v
     end
 
