@@ -47,9 +47,9 @@ describe Contract do
     end
 
     it "arguments are missing" do
-      expect { Contract.from_file() }.to raise_error ArgumentError, "missing keyword: :file"
-      expect { Contract.from_abi(name: name, address: addr) }.to raise_error ArgumentError, "missing keyword: :abi"
-      expect { Contract.from_bin(name: name, abi: abi) }.to raise_error ArgumentError, "missing keyword: :bin"
+      expect { Contract.from_file() }.to raise_error ArgumentError
+      expect { Contract.from_abi(name: name, address: addr) }.to raise_error ArgumentError
+      expect { Contract.from_bin(name: name, abi: abi) }.to raise_error ArgumentError
     end
 
     it "invalid abi json parsing fails" do
